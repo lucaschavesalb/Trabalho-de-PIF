@@ -13,7 +13,7 @@ void adicionarNavioNaFrota(Frota *f, const char *nome, int tamanho) {
     Navio *n;
 
     if (novo == NULL) {
-        fprintf(stderr, "Erro de memoria na frota.\n");
+        fprintf(stderr, "Erro de memoria na frota.\n"); // Arquivo ou fluxo de dados especificado
         exit(1);
     }
 
