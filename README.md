@@ -1,4 +1,5 @@
-# Batalha Naval - PIFSI 2025.2
+# Batalha Naval - Programação Imperativa e Funcional
+
 
 Projeto desenvolvido para a disciplina *Projetos de Sistemas de Informação (CESAR School), implementando o clássico jogo de tabuleiro **Batalha Naval* em *C*.
 
@@ -10,9 +11,28 @@ O objetivo principal é exercitar conceitos avançados da linguagem C, como *alo
 
 ## Equipe
 
-* Heitor Castilhos
-* Lucas Chaves
-* Luiz Gustavo
+<div align="center">
+  <table>
+    <tr>
+      <th>Nome</th>
+      <th>E-mail</th>
+    </tr>
+  <tr>
+    <td>Heitor Castilhos</td>
+    <td>hcm2@cesar.school</td>
+  </tr>
+    <tr>
+    <td>Lucas Chaves</td>
+    <td>lca3@cesar.school</td>
+  </tr>
+  <tr>
+    <td>Luiz Gustavo</td>
+    <td>lggs@cesar.school</td>
+  </tr>
+  <tr>
+</table>
+  
+</div>
 
 ---
 
