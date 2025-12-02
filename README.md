@@ -84,17 +84,12 @@ O projeto conta com um **Makefile** para automatizar a compilação.
 ### Passos
 
 1. Abra o terminal na pasta raiz do projeto.
-2. Compile o código:
-make
+2. Compile o código: make
 3. Execute o jogo:
-# Linux/Mac
+### Linux/Mac
 ./batalha_naval
-# Windows (PowerShell/CMD)
-batalha_naval.exe
-
-ou
-
-.\batalha_naval.exe
+### Windows (PowerShell/CMD)
+batalha_naval.exe ou .\batalha_naval.exe
 
 4. Para limpar arquivos objetos e executáveis:
 make clean
@@ -102,9 +97,7 @@ make clean
 5. Se não houver make no windows:
 6. Alternativa sem make (Windows)
 
-gcc -Wall -Wextra -g *.c -o batalha_naval.exe
-.\batalha_naval.exe
-=======
+### gcc -Wall -Wextra -g *.c -o batalha_naval.exe .\batalha_naval.exe
 
 ## Bibliotecas Utilizadas
 
