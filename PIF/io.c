@@ -1,7 +1,7 @@
-#include <stdio.h>      // Biblioteca para imprimir coisas na tela (printf)
-#include <ctype.h>      // Biblioteca para mexer com letras (toupper, isalpha)
-#include <string.h>     // Biblioteca para mexer com textos (strings)
-#include "io.h"         // Inclui o cabeçalho que declara as funções deste arquivo
+#include <stdio.h>      
+#include <ctype.h>      
+#include <string.h>     
+#include "io.h" // Inclui o cabeçalho que declara as funções deste arquivo
 
 void exibirTabuleiro(Tabuleiro *t, int mostrar_navios) {   // Mostra o tabuleiro na tela
     int l, c;   // Variáveis de linha (l) e coluna (c)

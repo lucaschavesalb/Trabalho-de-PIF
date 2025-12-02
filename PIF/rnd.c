@@ -1,5 +1,5 @@
-#include <stdlib.h>   // Biblioteca que contém rand() e srand()
-#include <time.h>     // Biblioteca que contém time()
+#include <stdlib.h>   
+#include <time.h>     
 #include "rnd.h"      // Cabeçalho com a declaração das funções deste arquivo
 
 void inicializarAleatorio(void) {                // Inicia o gerador de números aleatórios

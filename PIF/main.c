@@ -1,9 +1,9 @@
-#include <stdio.h>     // Entrada e saída (printf, scanf)
-#include <stdlib.h>    // Funções gerais, memória, etc.
-#include <ctype.h>     // Para usar toupper()
-#include "game.h"      // Funções relacionadas ao jogo
-#include "io.h"        // Funções de entrada e exibição
-#include "rnd.h"       // Números aleatórios
+#include <stdio.h>     
+#include <stdlib.h>    
+#include <ctype.h>    
+#include "game.h"     
+#include "io.h"    // Funções de entrada e exibição     
+#include "rnd.h"  // Números aleatórios      
 
 int g_linhas = 10;      // Tamanho padrão das linhas
 int g_colunas = 10;     // Tamanho padrão das colunas
