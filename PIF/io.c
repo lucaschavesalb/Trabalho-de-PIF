@@ -1,60 +1,60 @@
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
-#include "io.h"
+#include <stdio.h>      // Biblioteca para imprimir coisas na tela (printf)
+#include <ctype.h>      // Biblioteca para mexer com letras (toupper, isalpha)
+#include <string.h>     // Biblioteca para mexer com textos (strings)
+#include "io.h"         // Inclui o cabeçalho que declara as funções deste arquivo
 
-void exibirTabuleiro(Tabuleiro *t, int mostrar_navios) {
-    int l, c;
+void exibirTabuleiro(Tabuleiro *t, int mostrar_navios) {   // Mostra o tabuleiro na tela
+    int l, c;   // Variáveis de linha (l) e coluna (c)
 
-    printf("\n   ");
-    for (c = 0; c < t->colunas; c++) {
-        printf("%2d ", c + 1);
+    printf("\n   ");   // Espaço inicial para alinhar os números das colunas
+
+    for (c = 0; c < t->colunas; c++) {      // Escreve os números das colunas
+        printf("%2d ", c + 1);              // Mostra 1, 2, 3... com largura de 2 caracteres
     }
-    printf("\n");
+    printf("\n");    // Pula para a próxima linha
 
-    for (l = 0; l < t->linhas; l++) {
-        printf("%c |", 'A' + l);
-        for (c = 0; c < t->colunas; c++) {
-            Celula *cel = obterCelula(t, l, c);
-            char ch;
+    for (l = 0; l < t->linhas; l++) {        // Para cada linha do tabuleiro
+        printf("%c |", 'A' + l);            // Mostra A, B, C, D… antes da linha
 
-            if (cel->estado == ESTADO_ACERTO)      ch = 'X'; // [cite: 147] Legenda X
-            else if (cel->estado == ESTADO_ERRO)   ch = '.'; // [cite: 147] Legenda .
-            else if (cel->estado == ESTADO_NAVIO && mostrar_navios) ch = 'N';
-            else                                   ch = '~';
+        for (c = 0; c < t->colunas; c++) {   // Para cada coluna
+            Celula *cel = obterCelula(t, l, c);   // Obtém a célula atual
+            char ch;   // Caractere que vai representar essa célula na tela
 
-            printf(" %c ", ch);
+            if (cel->estado == ESTADO_ACERTO)          ch = 'X';   // Acertou um navio
+            else if (cel->estado == ESTADO_ERRO)       ch = '.';   // Tiro na água
+            else if (cel->estado == ESTADO_NAVIO && mostrar_navios) ch = 'N'; // Navio visível
+            else                                        ch = '~';  // Água sem revelar navio
+
+            printf(" %c ", ch);     // Imprime o símbolo da célula
         }
-        printf("|\n");
+        printf("|\n");  // Fecha a linha do tabuleiro
     }
 }
 
-int lerCoordenada(int *linha, int *coluna, int max_linhas, int max_colunas) {
-    char entrada[16];
+int lerCoordenada(int *linha, int *coluna, int max_linhas, int max_colunas) { // Lê algo tipo "B5"
+    char entrada[16];    // Guarda o que o usuário digitou
     char letra;
     int numero;
     int l, c;
 
-    if (scanf("%15s", entrada) != 1) return 0;
+    if (scanf("%15s", entrada) != 1) return 0;   // Se falhou ao ler, retorna erro
 
-    letra = entrada[0];
-    if (!isalpha((unsigned char) letra)) return 0;
+    letra = entrada[0];  // Primeiro caractere deve ser uma letra
+    if (!isalpha((unsigned char) letra)) return 0;  // Se não for letra → erro
 
-    letra = (char) toupper((unsigned char) letra);
-    l = letra - 'A';
+    letra = (char) toupper((unsigned char) letra);  // Converte para MAIÚSCULA
+    l = letra - 'A';  // Converte 'A' em 0, 'B' em 1, etc.
 
-    // Tenta ler o número a partir do segundo caractere
-    if (sscanf(entrada + 1, "%d", &numero) != 1) return 0;
-    c = numero - 1;
+    if (sscanf(entrada + 1, "%d", &numero) != 1) return 0;  // Lê o número após a letra
+    c = numero - 1;   // Números começam em 1, índices começam em 0
 
-    // Validação de limites [cite: 152]
-    if (l < 0 || l >= max_linhas || c < 0 || c >= max_colunas) return 0;
+    if (l < 0 || l >= max_linhas || c < 0 || c >= max_colunas) return 0;  // Fora do tabuleiro → erro
 
-    *linha = l;
-    *coluna = c;
-    return 1;
+    *linha = l;    // Salva a linha lida
+    *coluna = c;   // Salva a coluna lida
+    return 1;      // Sucesso!
 }
 
-void exibirMensagem(const char *msg) {
+void exibirMensagem(const char *msg) {  // Imprime uma mensagem simples na tela
     printf("%s\n", msg);
 }

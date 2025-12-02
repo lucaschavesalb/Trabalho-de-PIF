@@ -1,15 +1,17 @@
-#ifndef IO_H
+#ifndef IO_H  
 #define IO_H
 
-#include "board.h"
+// Protege o arquivo para não ser incluído duas vezes
 
-/* Desenha o tabuleiro no console */
-void exibirTabuleiro(Tabuleiro *t, int mostrar_navios);
+#include "board.h" // Precisa do tipo Tabuleiro
 
-/* Lê uma coordenada tipo "B5" e converte para indices */
-int lerCoordenada(int *linha, int *coluna, int max_linhas, int max_colunas);
 
-/* Exibe mensagens de erro ou sucesso simples */
-void exibirMensagem(const char *msg);
+void exibirTabuleiro(Tabuleiro *t, int mostrar_navios);  // Desenha o tabuleiro na tela
 
-#endif
+
+int lerCoordenada(int *linha, int *coluna, int max_linhas, int max_colunas); // Lê coordenadas tipo "B4"
+
+
+void exibirMensagem(const char *msg);  // Mostra mensagens simples
+
+#endif // Fim da proteção

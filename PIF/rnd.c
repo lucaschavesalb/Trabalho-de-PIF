@@ -1,11 +1,11 @@
-#include <stdlib.h>
-#include <time.h>
-#include "rnd.h"
+#include <stdlib.h>   // Biblioteca que contém rand() e srand()
+#include <time.h>     // Biblioteca que contém time()
+#include "rnd.h"      // Cabeçalho com a declaração das funções deste arquivo
 
-void inicializarAleatorio(void) {
-    srand((unsigned) time(NULL));
+void inicializarAleatorio(void) {                // Inicia o gerador de números aleatórios
+    srand((unsigned) time(NULL));                // Usa o tempo atual como semente (cada execução gera valores diferentes)
 }
 
-int obterNumeroAleatorio(int min, int max) {
-    return min + rand() % (max - min + 1);
+int obterNumeroAleatorio(int min, int max) {    // Devolve um aleatório entre min e max
+    return min + rand() % (max - min + 1);      // Fórmula para gerar número dentro do intervalo
 }
