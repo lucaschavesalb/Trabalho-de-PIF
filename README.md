@@ -91,12 +91,17 @@ make
 ./batalha_naval
 # Windows (PowerShell/CMD)
 batalha_naval.exe
-# ou
+
+ou
+
 .\batalha_naval.exe
+
 4. Para limpar arquivos objetos e executáveis:
 make clean
+
 5. Se não houver make no windows:
-# Alternativa sem make (Windows)
+6. Alternativa sem make (Windows)
+
 gcc -Wall -Wextra -g *.c -o batalha_naval.exe
 .\batalha_naval.exe
 =======
