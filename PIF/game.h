@@ -2,30 +2,42 @@
 #define GAME_H
 
 #include "board.h"
-#include "fleet.h"
+#include "fleet.h" // O compilador precisa saber o que é "Tabuleiro" e "Frota" antes de usar aqui.
 
+// Define todos os dados que pertencem a um único jogador.
 typedef struct {
-    Tabuleiro tabuleiro;
-    Tabuleiro tiros;
-    Frota frota;
-    char apelido[32];
-    int total_tiros;
-    int total_acertos;
+    Tabuleiro tabuleiro;  // O tabuleiro onde os navios dele estão posicionados
+    Tabuleiro tiros;      // O tabuleiro de "radar" onde ele marca os tiros dados
+    Frota frota;          // A lista de navios e seus status (vida, tamanho)
+    char apelido[32];     // Buffer estático para o nome (max 31 chars + \0)
+    int total_tiros;      // Contador para estatísticas
+    int total_acertos;    // Contador para estatísticas
 } Jogador;
 
+
+// Agrupa tudo que é necessário para controlar uma partida inteira.
 typedef struct {
-    Jogador j1;
-    Jogador j2;
-    int jogador_atual;
-    int jogo_acabou;
-    int linhas_cfg;  // Configuracao atual
+    Jogador j1;           // Instância completa do Jogador 1
+    Jogador j2;           // Instância completa do Jogador 2
+    int jogador_atual;    // Flag para controlar o turno (ex: 1 ou 2)
+    int jogo_acabou;      // Booleano (0 ou 1) para parar o loop principal do jogo
+    int linhas_cfg;       // Configuração de tamanho do tabuleiro usada na partida
     int colunas_cfg;
 } Jogo;
 
+// Declara as funções para que outros arquivos saibam que elas existem.
+
+// Inicializa os dados do jogador e aloca memória para os tabuleiros internos
 void inicializarJogador(Jogador *j, const char *apelido, int linhas, int colunas);
+
+// Libera a memória dos tabuleiros e da frota
 void liberarJogador(Jogador *j);
-void posicionarFrotaAuto(Jogador *j); // Usa RND
-void posicionarFrotaManual(Jogador *j); // Usa IO
+
+// Funções de posicionamento
+void posicionarFrotaAuto(Jogador *j);   // Algoritmo aleatório
+void posicionarFrotaManual(Jogador *j); // Interação com usuário
+
+// Processa a lógica de um tiro de um jogador no tabuleiro do outro
 void jogadorAtira(Jogador *atirador, Jogador *alvo);
 
 #endif
