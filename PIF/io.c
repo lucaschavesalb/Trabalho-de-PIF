@@ -1,7 +1,7 @@
 #include <stdio.h>      
 #include <ctype.h>      
 #include <string.h>     
-#include "io.h" // Inclui o cabeçalho que declara as funções deste arquivo
+#include "io.h" // chama as funções lá do .h 
 
 void exibirTabuleiro(Tabuleiro *t, int mostrar_navios) {   // Mostra o tabuleiro na tela
     int l, c;   // Variáveis de linha (l) e coluna (c)

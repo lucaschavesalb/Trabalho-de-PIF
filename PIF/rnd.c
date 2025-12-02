@@ -1,6 +1,6 @@
 #include <stdlib.h>   
 #include <time.h>     
-#include "rnd.h"      // Cabeçalho com a declaração das funções deste arquivo
+#include "rnd.h"   // chama as funções lá do .h´s
 
 void inicializarAleatorio(void) {                // Inicia o gerador de números aleatórios
     srand((unsigned) time(NULL));                // Usa o tempo atual como semente (cada execução gera valores diferentes)

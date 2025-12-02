@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "fleet.h"
+#include "fleet.h" // chama as funções lá do .h 
 
 void inicializarFrota(Frota *f) {
     f->navios = NULL;

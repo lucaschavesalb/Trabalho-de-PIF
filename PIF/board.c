@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "board.h"
+#include "board.h" // chama as funções lá do .h 
 
 void inicializarTabuleiro(Tabuleiro *t, int linhas, int colunas) {
     int total = linhas * colunas; // quantas células existem no tabuleiro

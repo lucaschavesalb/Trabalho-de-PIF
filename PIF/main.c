@@ -2,8 +2,8 @@
 #include <stdlib.h>    
 #include <ctype.h>    
 #include "game.h"     
-#include "io.h"    // Funções de entrada e exibição     
-#include "rnd.h"  // Números aleatórios      
+#include "io.h"       
+#include "rnd.h"  // chama as funções lá do .h´s      
 
 int g_linhas = 10;      // Tamanho padrão das linhas
 int g_colunas = 10;     // Tamanho padrão das colunas

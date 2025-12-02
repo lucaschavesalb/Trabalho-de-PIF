@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include "game.h"
-#include "io.h"
+#include "io.h" // chama as funções lá do .h´s 
 #include "rnd.h"
 
 // Inicializa a estrutura do jogador, configurando nome e alocando memória para os tabuleiros
